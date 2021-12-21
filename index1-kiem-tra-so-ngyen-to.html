@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KIEM TRA SO NGUYEN TO</title>
+</head>
+<body>
+<script>
+
+    let arrPrimes = [];
+    // tim cac so nguyen to trong day n so nguyen duong;
+    let n = parseInt(prompt('moi nhap n '));
+
+    function checkPrime(number) {
+
+        if (number < 2) {
+            return false;
+        } else if (number === 2) {
+            return true
+        } else {
+            let isPrime = true;
+            for (let i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    isPrime = false;
+                }
+            }
+            return isPrime;
+        }
+    }
+
+    function isArrPrime(n) {
+        for (let j = 0; j < n; j++) {
+            if (checkPrime(j)) {
+                arrPrimes.push(j);
+            }
+        }
+    }
+
+    isArrPrime(n);
+
+    document.write("Day cac so nguyen to tu 2 den " + n + " la: " + arrPrimes);
+
+
+
+</script>
+</body>
+</html>

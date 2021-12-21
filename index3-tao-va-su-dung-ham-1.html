@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai-1</title>
+</head>
+<body>
+<div><h2>Bài 1</h2>
+    <input type="button" value="Run" onclick="alertMessage()">
+    <hr>
+</div>
+<div>
+    <h2>bài 2</h2>
+    <input type="button" value="Run" onclick="chayChuongTrinh()">
+    <p id="result"></p>
+    <hr>
+</div>
+<div>
+    <h2>Bài 3</h2>
+    <input type="button" value="Run" onclick="chayChuongTrinh3()">
+    <p id="result3"></p>
+    <hr>
+</div>
+<div>
+    <h2>bài 4</h2>
+    <input type="button" value="Run" onclick="chayChuongTrinh4()">
+    <hr>
+</div>
+<div>
+    <h2>bài 5</h2>
+    <input type="button" value="Run" onclick="chayChuongTrinh5()">
+    <p id="result5"></p>
+    <hr>
+</div>
+<script>
+    function alertMessage() {   // >>>>> bai 1
+        alert('Xin chào');
+    }
+
+    function chayChuongTrinh() {
+        let a = parseFloat(prompt('moi nhap a: '));
+        a = a + 1;
+        document.getElementById('result').innerHTML = a;
+    }
+
+    function chayChuongTrinh3() {
+        let masage;
+        let a = parseFloat(prompt('moi nhap vao so a: '));
+        let b = parseFloat(prompt('moi nhap vao so b: '));
+        if (a > b) {
+            alert('vui long nhap lai, (vì a > b)')
+        }else {
+            masage = a + b;
+            document.getElementById('result3').innerHTML = masage;
+        }
+
+    }
+
+    function chayChuongTrinh4() {
+        let result = 0;
+        function addNumbers() {
+            firstNum = 4;
+            secondNum = 8;
+            result = firstNum + secondNum;
+            return result;
+        }
+        alert(result);
+        result = addNumbers();
+        alert(result)
+    }
+
+    function chayChuongTrinh5() {
+        let ngoiSao = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+        let chomSao = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+        let sao = prompt('moi nhap ten cua ngoi sao: ');
+        let ketQua = 'ten ngoi sao khong phu hop';
+        for (let i = 0; i < ngoiSao.length; i++) {
+            if(sao === ngoiSao[i]) {
+                ketQua = 'ngoi sao ' + sao + ' thuoc chom sao '+ chomSao[i];
+            }
+        }
+        document.getElementById('result5').innerHTML = ketQua;
+
+
+    }
+</script>
+</body>
+</html>

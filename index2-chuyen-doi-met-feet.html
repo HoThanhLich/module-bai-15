@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CHUYEN DOI MET - FEET</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>giá trị (m):</td>
+        <td>
+            <input type="text"  id="input1">
+        </td>
+    </tr>
+    <tr>
+        <td>giá trị (feet):</td>
+        <td>
+            <input type="text"  id="input2">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="button" value="convert" onclick="convert()" style="width: 120%; background-color: #2120ff; color: white">
+        </td>
+    </tr>
+</table>
+<script>
+
+
+        function convert() {
+            let donVi1 = document.getElementById('input1').value;
+            let donvi2 = document.getElementById('input2').value;
+            let giaTriRa;
+            if (donVi1 === "" && donvi2 === "") {
+                alert('vui long nhap mot gia tri') ;
+            }else if (donVi1 !== "" && donvi2 === "") {
+                giaTriRa = 3.279 * donVi1;
+                document.getElementById('input2').value = giaTriRa;
+            }else if (donVi1 === "" && donvi2 !== "") {
+                giaTriRa = 0.305 * donvi2;
+                document.getElementById('input1').value = giaTriRa;
+            } else {
+                alert('vui long kiem tra lai gia tri !!!')
+            }
+        }
+</script>
+</body>
+</html>
