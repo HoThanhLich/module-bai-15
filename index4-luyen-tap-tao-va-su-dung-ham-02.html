@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2>Bài 1: tính bình phương</h2>
+    <input type="text" id="dauvao1" placeholder="nhập vào số a">
+    <button onclick="thucHien1()" style="width: 100px">Run</button>
+    <p id="traketqua1"></p>
+    <hr>
+</div>
+
+<div>
+    <h2>Bài 2: tính chu vi và diện tích</h2>
+    mời nhập bán kính: <input type="text" id="dauvao2" placeholder="đơn vị m"><br>
+    <button onclick="tinhChuVi()" style="width: 120px">Tính chu vi</button>
+    <br>
+    <button onclick="tinhDienTich()" style="width: 120px">Tính diện tích</button>
+    <br>
+    <p id="traketqua2"></p>
+    <hr>
+</div>
+
+<div>
+    <h2>Bài 3: tính giai thừa</h2>
+    <input type="text" id="dauvao3" placeholder="số nguyên dương">
+    <button onclick="tinhGiaiThua()" style="width: 120px">Run</button>
+    <p id="traketqua3"></p>
+    <hr>
+</div>
+
+<div>
+    <h2>Bài 4: kiểm tra kí tự</h2>
+    <input type="text" id="dauvao4" placeholder="mời nhập số !">
+    <button onclick="kiemTraKiTu()" style="width: 120px">Run</button>
+    <p id="traketqua4"></p>
+    <hr>
+</div>
+
+<div>
+    <h2>Bài 5:GTNN của 3 số</h2>
+    <input type="text" id="gitri1" placeholder="so a">
+    <input type="text" id="gitri2" placeholder="so b">
+    <input type="text" id="gitri3" placeholder="so c">
+    <input type="button" onclick="soSanh()" style="width: 120px" value="Run">
+    <br>
+    <p id="traketqua5"></p>
+    <hr>
+</div>
+
+<div>
+    <h2>Bài 6: Kiểm tra số nguyên dương</h2>
+    <input type="text" id="input6" placeholder="nhập số nguyên dương">
+    <input type="button" onclick="kiemTra6()" value="Kiểm Tra" style="width: 120px">
+    <p id="traketqua6"></p>
+    <hr>
+</div>
+
+
+<script>
+    function thucHien1() {
+        let a = document.getElementById('dauvao1').value;
+        document.getElementById('traketqua1').innerHTML = a * a;
+    }
+
+    function tinhChuVi() {
+        let a = document.getElementById('dauvao2').value;
+        document.getElementById('traketqua2').innerHTML = "chu vi bằng: " + 2 * 3.14 * a + ' m';
+    }
+
+    function tinhDienTich() {
+        let a = document.getElementById('dauvao2').value;
+        document.getElementById('traketqua2').innerHTML = 'diện tích bằng: ' + 3.14 * a * a + ' m<sup>2</sup>';
+    }
+
+    function tinhGiaiThua() {
+        let a = document.getElementById('dauvao3').value;
+        let n = 1;
+        for (let i = 1; i <= a; i++) {
+            n *= i;
+        }
+        document.getElementById('traketqua3').innerHTML = a + " giai thừa =  " + n;
+    }
+
+    function kiemTraKiTu() {
+        let a = document.getElementById('dauvao4').value;
+        // a = parseFloat(a);
+        console.log(typeof a)
+
+        if (isNaN(a)) {
+            document.getElementById('traketqua4').innerHTML = false;
+        } else {
+            document.getElementById('traketqua4').innerHTML = true;
+        }
+    }
+
+    function soSanh() {
+        let a = parseInt(document.getElementById('gitri1'));
+        // console.log(a)
+        let b = parseInt(document.getElementById('gitri2'));
+        // console.log(b)
+        let c = parseInt(document.getElementById('gitri3'));
+        // console.log(c)
+        let min;
+        if (a >= b) {
+            if (b >= c) {
+                min = c;
+                document.getElementById('traketqua5').innerHTML = min;
+            } else {
+                min = b;
+                document.getElementById('traketqua5').innerHTML = min;
+            }
+        } else {
+            if (a >= c) {
+                min = c;
+                document.getElementById('traketqua5').innerHTML = min;
+            } else {
+                min = a;
+                document.getElementById('traketqua5').innerHTML = min;
+            }
+        }
+    }
+
+    function kiemTra6() {
+        let a = parseFloat(document.getElementById('input6'));
+        if (a > 0 && a % 1 === 0) {
+            document.getElementById('traketqua6').innerHTML = true;
+        } else {
+            document.getElementById('traketqua6').innerHTML = false;
+        }
+    }
+
+</script>
+</body>
+</html>
